@@ -1,0 +1,9 @@
+.sidebar {
+  display: flex;
+  flex: 0.25;
+  flex-direction: column;
+  min-width: 240px;
+}
+.sidebar h4 {
+  margin-left: 1rem;
+}

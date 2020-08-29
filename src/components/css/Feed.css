@@ -1,0 +1,7 @@
+.feed {
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+  overflow-y: scroll;
+  padding: 1rem;
+}

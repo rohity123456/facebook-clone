@@ -1,0 +1,25 @@
+.story {
+  min-height: 11rem;
+  min-width: 6.5rem;
+  background-size: cover;
+  background-position: center center;
+  transition: transform 200ms ease-in;
+  background-repeat: no-repeat;
+  position: relative;
+  margin-right: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 17px -7px rgba(0, 0, 0, 0.75);
+}
+.story:hover {
+  transform: scale(1.07);
+}
+.story__avatar {
+  margin: 10px;
+  border: 5px solid var(--headerIconHoverColor);
+}
+.story h4 {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: var(--bg-white);
+}

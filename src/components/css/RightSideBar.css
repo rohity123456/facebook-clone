@@ -1,0 +1,29 @@
+.RightSideBar {
+  display: flex;
+  flex: 0.29;
+  flex-direction: column;
+  padding: 0.7rem;
+  line-height: 1.34;
+  right: 0;
+}
+.RightSidebar__top {
+  display: flex;
+  justify-content: space-between;
+  color: #65676b;
+  margin-bottom: 0.7rem;
+}
+
+.RightSideBar__icons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.RightSideBar__icons .MuiSvgIcon-root {
+  margin-right: 10px;
+}
+.RightSidebar__contact {
+  display: flex;
+  align-items: center;
+}
+.RightSidebar__contact h4 {
+  margin-left: 10px;
+}

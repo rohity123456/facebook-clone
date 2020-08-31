@@ -18,6 +18,8 @@
 .post__bottom {
   margin: 10px 0;
   padding: 1rem 1.6rem;
+  font-size: 1.1rem;
+  color: black;
 }
 .post__image {
   display: flex;

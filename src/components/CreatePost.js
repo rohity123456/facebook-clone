@@ -4,14 +4,26 @@ import { Avatar } from "@material-ui/core";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import PhotoAlbumIcon from "@material-ui/icons/PhotoAlbum";
-
+import { useStateValue } from "../common/StateProvider";
+import db from "../common/firebase";
+import firebase from "firebase";
 function CreatePost() {
   const [imgUrl, setImgUrl] = useState("");
   const [input, setInput] = useState("");
+  const [{ User }, dispatch] = useStateValue();
+
   //methods
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("YOO");
+    if (input.trim() || imgUrl.trim())
+      db.collection("posts").add({
+        message: input,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        profilesrc: User.photoURL,
+        image: imgUrl,
+        title: User.displayName,
+      });
+    setImgUrl("") && setInput("");
   };
 
   return (
@@ -22,7 +34,7 @@ function CreatePost() {
           <input
             type="text"
             value={input}
-            placeholder="What's on your mind?"
+            placeholder={`What's on your mind ${User.displayName}?`}
             onChange={(e) => setInput(e.target.value)}
           />
           <input
@@ -31,7 +43,7 @@ function CreatePost() {
             placeholder="Image Url(optional)"
             onChange={(e) => setImgUrl(e.target.value)}
           />
-          <button type="submit" hidden onClick={handleSubmit}></button>
+          <button type="submit" onClick={handleSubmit}></button>
         </form>
       </div>
       <div className="createaPost__bottom">

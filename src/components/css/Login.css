@@ -12,7 +12,7 @@ body {
   align-items: center;
   padding: 20px 50px;
   justify-content: space-evenly;
-  box-shadow: 0 0 10px 5px rgba(0, 255, 0, 0.2);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
 }
 .login__info img {
   object-fit: contain;
@@ -21,10 +21,10 @@ body {
 .login__info h2 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin-top: 1rem;
-  color: #0a8d4f;
+  color: #3b5998;
 }
 .login__info button:hover {
-  background-color: #0a8d48;
+  background-color: #3b5998;
   color: white;
 }
 .login__info button {
@@ -32,7 +32,7 @@ body {
   margin-top: 3rem;
   font-weight: 550;
   text-transform: capitalize;
-  background: black;
-  color: #0a8d48;
-  box-shadow: 0 0 7px 1px rgba(0, 255, 0, 0.5);
+  background: whitesmoke;
+  color: #3b5998;
+  box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.5);
 }

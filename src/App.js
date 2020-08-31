@@ -4,9 +4,11 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Feed from "./components/Feed";
 import Login from "./components/Login";
+import { useStateValue } from "./common/StateProvider";
+import RightSideBar from "./components/RightSideBar";
 
 function App() {
-  const User = "";
+  const [{ User }, dispatch] = useStateValue();
   return (
     <div className="App">
       {!User ? (
@@ -17,6 +19,7 @@ function App() {
           <div className="App__Body">
             <Sidebar />
             <Feed />
+            <RightSideBar />
           </div>
         </>
       )}

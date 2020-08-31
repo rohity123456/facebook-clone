@@ -8,10 +8,12 @@ import StorefrontIcon from "@material-ui/icons/Storefront";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
 import "./css/Sidebar.css";
+import { useStateValue } from "../common/StateProvider";
 function Sidebar() {
+  const [{ User }, dispatch] = useStateValue();
   return (
     <div className="sidebar">
-      <SidebarRow title="Rohit" />
+      <SidebarRow title="Rohit" src={User.photoURL} title={User.displayName} />
       <SidebarRow
         title="Covid 19 Information Center"
         Icon={LocalHospitalIcon}

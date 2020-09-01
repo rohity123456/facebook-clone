@@ -12,6 +12,7 @@
 .createaPost__top {
   display: flex;
   padding: 10px;
+  align-items: center;
   border-bottom: 1px solid #cfc2f5;
 }
 .createaPost__top > form {

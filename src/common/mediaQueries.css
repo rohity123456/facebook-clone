@@ -29,12 +29,21 @@
     margin: 1rem 0.5rem 0 0.5rem;
   }
   .createPost h3,
-  .post p {
+  .post__topInfo p {
     font-size: 0.7rem;
+  }
+  .post__bottom p {
+    font-size: 0.95rem;
+  }
+  .post__option {
+    padding: 5px;
   }
   .createPost .MuiSvgIcon-root,
   .post .MuiSvgIcon-root {
     font-size: 1.4rem;
+  }
+  .createPost {
+    padding: 0.5rem;
   }
   .createaPost__top form input:first-child {
     margin-bottom: 10px;
@@ -49,6 +58,13 @@
     justify-content: space-between;
   }
   .createaPost__option {
-    padding: 0.5rem;
+    padding: 0.5rem 0.3rem;
+  }
+  .post__options {
+    padding: 0;
+    padding-top: 12px;
+  }
+  .scroll::-webkit-scrollbar {
+    display: none;
   }
 }

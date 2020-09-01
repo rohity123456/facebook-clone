@@ -48,7 +48,7 @@ function CreatePost() {
   return (
     <div className="createPost">
       <div className="createaPost__top">
-        <Avatar />
+        <Avatar src={User.photoURL} />
         <form>
           <input
             type="text"

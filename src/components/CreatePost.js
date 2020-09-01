@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./css/CreatePost.css";
-import { Avatar } from "@material-ui/core";
+import { Avatar, IconButton } from "@material-ui/core";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import PhotoAlbumIcon from "@material-ui/icons/PhotoAlbum";
+import SendRoundedIcon from "@material-ui/icons/SendRounded";
 import { useStateValue } from "../common/StateProvider";
 import db from "../common/firebase";
 import firebase from "firebase";
@@ -16,22 +17,32 @@ function CreatePost() {
   //methods
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (input.trim() || imgUrl.trim())
-      fetch(imgUrl)
-        .then((response) => response.blob())
-        .then((images) => {
-          console.log(images);
-          if (images && allowedFileTypes.includes(images.type))
-            db.collection("posts").add({
-              message: input,
-              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-              profilesrc: User.photoURL,
-              image: imgUrl,
-              title: User.displayName,
-            });
+    if (input.trim() || imgUrl.trim()) {
+      if (!input)
+        fetch(imgUrl)
+          .then((response) => response.blob())
+          .then((images) => {
+            console.log(images);
+            if (images && allowedFileTypes.includes(images.type))
+              db.collection("posts").add({
+                message: input,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                profilesrc: User.photoURL,
+                image: imgUrl,
+                title: User.displayName,
+              });
+          });
+      else
+        db.collection("posts").add({
+          message: input,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+          profilesrc: User.photoURL,
+          image: imgUrl,
+          title: User.displayName,
         });
-
-    setImgUrl("") && setInput("");
+    }
+    setImgUrl("");
+    setInput("");
   };
 
   return (
@@ -55,6 +66,9 @@ function CreatePost() {
           />
           <button type="submit" onClick={handleSubmit}></button>
         </form>
+        <IconButton className="CreatePostButton" onClick={handleSubmit}>
+          <SendRoundedIcon />
+        </IconButton>
       </div>
       <div className="createaPost__bottom">
         <div className="createaPost__option" style={{ color: "red" }}>

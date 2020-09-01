@@ -54,6 +54,9 @@
   .createaPost__top form input {
     flex: 1;
   }
+  .CreatePostButton {
+    visibility: visible;
+  }
   .createaPost__bottom {
     justify-content: space-between;
   }

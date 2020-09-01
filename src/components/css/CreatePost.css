@@ -18,6 +18,9 @@
   flex: 1;
   display: flex;
 }
+.CreatePostButton {
+  visibility: hidden;
+}
 .createaPost__top > form > input {
   outline: none;
   padding: 0.4rem 1rem;

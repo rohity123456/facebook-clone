@@ -7,6 +7,7 @@ import PhotoAlbumIcon from "@material-ui/icons/PhotoAlbum";
 import { useStateValue } from "../common/StateProvider";
 import db from "../common/firebase";
 import firebase from "firebase";
+import { allowedFileTypes } from "../common/helper";
 function CreatePost() {
   const [imgUrl, setImgUrl] = useState("");
   const [input, setInput] = useState("");
@@ -16,13 +17,20 @@ function CreatePost() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input.trim() || imgUrl.trim())
-      db.collection("posts").add({
-        message: input,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        profilesrc: User.photoURL,
-        image: imgUrl,
-        title: User.displayName,
-      });
+      fetch(imgUrl)
+        .then((response) => response.blob())
+        .then((images) => {
+          console.log(images);
+          if (images && allowedFileTypes.includes(images.type))
+            db.collection("posts").add({
+              message: input,
+              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+              profilesrc: User.photoURL,
+              image: imgUrl,
+              title: User.displayName,
+            });
+        });
+
     setImgUrl("") && setInput("");
   };
 
@@ -33,12 +41,14 @@ function CreatePost() {
         <form>
           <input
             type="text"
+            className="boxShadow"
             value={input}
             placeholder={`What's on your mind ${User.displayName}?`}
             onChange={(e) => setInput(e.target.value)}
           />
           <input
             type="text"
+            className="boxShadow"
             value={imgUrl}
             placeholder="Image Url(optional)"
             onChange={(e) => setImgUrl(e.target.value)}

@@ -10,6 +10,7 @@
   display: flex;
   justify-content: space-between;
   color: #65676b;
+  align-items: center;
   margin-bottom: 0.7rem;
 }
 
@@ -17,12 +18,25 @@
   display: flex;
   justify-content: space-evenly;
 }
-.RightSideBar__icons .MuiSvgIcon-root {
+/* .RightSideBar__icons .MuiSvgIcon-root {
   margin-right: 10px;
-}
+} */
 .RightSidebar__contact {
   display: flex;
+  padding: 5px;
+  margin-bottom: 5px;
   align-items: center;
+}
+.RightSidebar__contact h4 {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.RightSidebar__contact .MuiAvatar-root {
+  background-color: darkgray;
+}
+.RightSidebar__contact:hover {
+  background-color: lightgray;
+  border-radius: 10px;
 }
 .RightSidebar__contact h4 {
   margin-left: 10px;

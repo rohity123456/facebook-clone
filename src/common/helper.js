@@ -72,3 +72,4 @@ export const RandomContacts = [
   "Antonia Hinojos",
   "Rochel Hoss",
 ];
+export const allowedFileTypes = ["image/png", "image/jpeg", "image/gif"];

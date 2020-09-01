@@ -17,9 +17,9 @@ function Feed() {
 
     return unsubscribe;
   }, []);
-  console.log("POSTS", posts);
+  /* console.log("POSTS", posts); */
   return (
-    <div className="feed">
+    <div className="feed scroll">
       <StoryReel />
       <CreatePost />
       {posts?.map(

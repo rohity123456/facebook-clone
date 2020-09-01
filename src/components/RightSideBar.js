@@ -4,16 +4,22 @@ import SearchIcon from "@material-ui/icons/Search";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import "./css/RightSideBar.css";
 import { RandomContacts } from "../common/helper";
-import { Avatar } from "@material-ui/core";
+import { Avatar, IconButton } from "@material-ui/core";
 function RightSideBar() {
   return (
-    <div className="RightSideBar">
+    <div className="RightSideBar scroll">
       <div className="RightSidebar__top">
         <h4>Contacts</h4>
         <div className="RightSideBar__icons">
-          <SearchIcon />
-          <VideoCallIcon />
-          <MoreHorizIcon />
+          <IconButton>
+            <SearchIcon />
+          </IconButton>
+          <IconButton>
+            <VideoCallIcon />
+          </IconButton>
+          <IconButton>
+            <MoreHorizIcon />
+          </IconButton>
         </div>
       </div>
 

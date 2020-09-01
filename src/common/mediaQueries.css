@@ -1,0 +1,54 @@
+@media screen and (max-width: 600px) {
+  .header {
+    padding: 1rem 10px;
+    align-items: center;
+    font-size: medium;
+  }
+
+  .header__middle {
+    justify-content: space-between;
+  }
+  .header__options {
+    font-size: 30px !important;
+    padding: 0.5rem;
+    justify-content: space-between;
+  }
+  .feed {
+    flex: 1;
+    overflow-x: hidden;
+    padding: 1rem 0.2rem;
+  }
+  .RightSideBar,
+  .header__right,
+  .sidebar,
+  .header__input {
+    display: none;
+  }
+  .createPost,
+  .post {
+    margin: 1rem 0.5rem 0 0.5rem;
+  }
+  .createPost h3,
+  .post p {
+    font-size: 0.7rem;
+  }
+  .createPost .MuiSvgIcon-root,
+  .post .MuiSvgIcon-root {
+    font-size: 1.4rem;
+  }
+  .createaPost__top form input:first-child {
+    margin-bottom: 10px;
+  }
+  .createaPost__top form {
+    flex-wrap: wrap;
+  }
+  .createaPost__top form input {
+    flex: 1;
+  }
+  .createaPost__bottom {
+    justify-content: space-between;
+  }
+  .createaPost__option {
+    padding: 0.5rem;
+  }
+}

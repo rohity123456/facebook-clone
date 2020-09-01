@@ -6,7 +6,7 @@ import Feed from "./components/Feed";
 import Login from "./components/Login";
 import { useStateValue } from "./common/StateProvider";
 import RightSideBar from "./components/RightSideBar";
-
+import "./common/mediaQueries.css";
 function App() {
   const [{ User }, dispatch] = useStateValue();
   return (

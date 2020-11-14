@@ -31,7 +31,8 @@ function CreatePost() {
                 image: imgUrl,
                 title: User.displayName,
               });
-          });
+          })
+          .catch((err) => console.log(err));
       else
         db.collection("posts").add({
           message: input,
